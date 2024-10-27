@@ -2,7 +2,7 @@ import React from 'react'
 
 const Add = () => {
   return (
-   <h1>THis is add component</h1>
+   <h1 className='harsh'>THis is add component</h1>
   )
 }
 
