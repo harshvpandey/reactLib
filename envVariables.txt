@@ -1,0 +1,5 @@
+C:\Users\admin\AppData\Local\Android\Sdk\tools;
+C:\Users\admin\AppData\Local\Android\Sdk;
+C:\Users\admin\AppData\Local\Android\Sdk\platform-tools;
+C:\Users\admin\AppData\Local\Android\Sdk\emulator;
+C:\Users\admin\AppData\Local\Android\Sdk\tools\bin
