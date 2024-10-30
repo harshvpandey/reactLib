@@ -3,7 +3,7 @@ import {Password,Add} from "../components/add";
 import Basic from "../components/basic";
 import UserList from "../components/UserList";
 import MapTry from "../components/mapTry";
-
+import { Bs0CircleFill } from "react-icons/bs";
 function App(){
 
   //type rafce to get the template
@@ -18,8 +18,10 @@ function App(){
   //topics covered 
   //1.props 
   //2.conditional rendering
+  //to use icons you can install from react-icons : npm install react-icons --save
   return (
     <div>
+      <Bs0CircleFill></Bs0CircleFill>
     <Greet name="Harsh" msg='this is from props'></Greet>
     {/* here name is prop */}
     <Add></Add>

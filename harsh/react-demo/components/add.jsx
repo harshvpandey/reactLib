@@ -1,8 +1,8 @@
 import React from 'react'
-
+const styles={color:"white", backgroundColor:'teal',padding:"2rem"}
 const Add = () => {
   return (
-   <h1 className='harsh'>THis is add component</h1>
+   <h1 className='harsh' style={styles}>THis is add component</h1>
   )
 }
 const InvalidPassword=()=>{
