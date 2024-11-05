@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
-
+import { useContext } from 'react';
+import { Data } from '../src/App';
 const ToDoList = () => {
+  //receiveing data
+  const name=useContext(Data);
   const [todos,setTodos]=useState([]);
   const [sharedData, setSharedData] = useState("Initial Data");
   
@@ -9,6 +12,9 @@ const ToDoList = () => {
   const [inputValue,setInputValue]=useState('');
   return (
     <div>
+    {/* this is how you receive data */}
+    <h1>this is from useContext {name}</h1>
+    
     <h1>To do List</h1>
     <form>
     <ComponentA setSharedData={setSharedData} />
