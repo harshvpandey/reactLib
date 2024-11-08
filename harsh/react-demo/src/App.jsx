@@ -45,6 +45,8 @@ function App(){
   //context api allows to manage and share data along various components use to avoid prop drilling
 
   //learn about useContext more properly
+
+  
   console.log(counter);
   return (
     <div>
