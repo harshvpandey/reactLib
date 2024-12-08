@@ -4,6 +4,7 @@ import Basic from "../components/basic";
 import UserList from "../components/UserList";
 import MapTry from "../components/mapTry";
 import { Bs0CircleFill } from "react-icons/bs";
+import React from "react";
 import { useState } from "react";
 import ToDoList from "../components/ToDoList";
 function App(){
@@ -27,6 +28,9 @@ function App(){
   //everytime we change the value using setCount our component re renders
   const increment=()=>setCount(count+1);
   const decrement=()=>setCount(count-1);
+  //aksay saini
+  const heading=React.createElement("h1",{},"This is from React Create Element");
+  // const root=ReactDOM.createRoot();
   console.log(counter);
   return (
     <div>
