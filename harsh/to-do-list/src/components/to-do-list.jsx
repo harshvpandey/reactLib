@@ -12,26 +12,46 @@ const ToDoList=()=>{
  
     setTasks([...tasks,{status:'incomplete',task:newTask,taskId:Date.now()}])
     setNewTask(''); // Clear input field
-    }
-    
+  }
+  
+  const incompleteTasks = tasks.filter(task => task.status === 'incomplete');
+  const completedTasks = tasks.filter(task => task.status === 'completed');
 return(
     <span>
  
         <input placeholder="Add Tasks" className='input-box' value={newTask} onChange={(e) => setNewTask(e.target.value)} ></input>
         <button className='add-button' onClick={() => addTask()}>Add</button>
         <br></br>
-        <div>
-        {tasks.map((task) => (
-            <div key={task.taskId}>
-              <span>{task.task}</span>
-              <button onClick={() => {
-                setTasks(tasks.map(t => t.taskId === task.taskId ? { ...t, status: 'completed' } : t));
-              }}>
-                Mark as Completed
-              </button>
-            </div>
-          ))}
+        <div className="lists">
+          <div class="incomplete-list">
+          <span>Items To be Completed</span>
+          <div>
+          {incompleteTasks.map((task) => (
+              <div key={task.taskId} className='task-div'>
+                <span>{task.task}</span>
+                <button onClick={() => {
+                  setTasks(tasks.map(t => t.taskId === task.taskId ? { ...t, status: 'completed' } : t));
+                }} className="incomplete-button">
+                  Mark as Completed
+                </button>
+              </div>
+            ))}
+          </div>
+          </div>
+
+          <div className="completed-list">
+          <span>Items Completed</span>
+          <div className='task-div-completed'>
+          {completedTasks.map((task) => (
+              <div key={task.taskId}>
+                <span>{task.task}</span>
+              
+              </div>
+            ))}
+          </div>
+          </div>
         </div>
+
     </span>
 )
 }

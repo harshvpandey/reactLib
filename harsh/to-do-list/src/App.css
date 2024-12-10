@@ -1,5 +1,5 @@
 .input-box{
-  margin: 20px;
+  margin-right: 20px;
   width: 40vw;
   height: 5vh;
   font-size: 20px;
@@ -11,4 +11,51 @@
   padding: 17px;
   color: white;
   border-radius: 8px;
+}
+
+.incomplete-button{
+  background: rgb(211, 17, 17);
+  border: none;
+  padding: 17px;
+  color: white;
+  border-radius: 8px;
+  white-space: nowrap; /* Prevents line breaks inside the button */
+}
+
+.lists{
+  display: flex;
+  justify-content: space-evenly;
+}
+.completed-list{
+  flex: 0 0 30%; /* Incomplete list takes 70% width */
+  box-sizing: border-box;
+  max-width: 30%;
+}
+
+.incomplete-list{
+  flex: 0 0 70%; /* Incomplete list takes 70% width */
+  box-sizing: border-box;
+  max-width: 70%;
+  margin-right:5px;
+}
+.task-div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px
+}
+.task-div span{
+  flex-grow: 1; /* Allows task text to take up available space */
+  margin-right: 10px; /* Adds spacing between task text and the button */
+  word-wrap: break-word; /* Allows breaking of long words */
+  overflow-wrap: anywhere; /* Ensures text wraps within the container */
+}
+
+.task-div-completed span{
+  flex-grow: 1; /* Allows task text to take up available space */
+  margin-right: 10px; /* Adds spacing between task text and the button */
+  word-wrap: break-word; /* Allows breaking of long words */
+  padding:5px;
+  
+  overflow-wrap: anywhere; /* Ensures text wraps within the container */
 }
