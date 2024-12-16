@@ -10,7 +10,7 @@ const ToDoList=()=>{
  
     console.log(tasks)
  
-    setTasks([...tasks,{status:'incomplete',task:newTask,taskId:Date.now()}])
+    setTasks([...tasks,{status:'incomplete',edit:true,task:newTask,taskId:Date.now()}])
     setNewTask(''); // Clear input field
   }
   
@@ -29,13 +29,17 @@ return(
           {incompleteTasks.map((task) => (
               <div key={task.taskId} className='task-div'>
                 <span>
-                  <input value={task.task} onChange={(e)=>{setTasks(tasks.map(t=>t.task===task.task?{...task,task:e.target.value}:t))}}></input>
+                  <input value={task.task} disabled={task.edit} onChange={(e)=>{setTasks(tasks.map(t=>t.task===task.task?{...task,task:e.target.value}:t))}}></input>
                 </span>
+             
+                <button onClick={()=>{setTasks(tasks.map(t=>t.task===task.task?{...task,edit:false}:t))}}>Edit</button>
+
                 <button onClick={() => {
                   setTasks(tasks.map(t => t.taskId === task.taskId ? { ...t, status: 'completed' } : t));
                 }} className="incomplete-button">
                   Mark as Completed
                 </button>
+                
               </div>
             ))}
           </div>
