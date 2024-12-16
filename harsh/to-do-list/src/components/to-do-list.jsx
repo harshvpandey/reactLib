@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import {useState} from "react";
 
 
 const ToDoList=()=>{
@@ -23,12 +23,14 @@ return(
         <button className='add-button' onClick={() => addTask()}>Add</button>
         <br></br>
         <div className="lists">
-          <div class="incomplete-list">
+          <div className="incomplete-list">
           <span>Items To be Completed</span>
           <div>
           {incompleteTasks.map((task) => (
               <div key={task.taskId} className='task-div'>
-                <span>{task.task}</span>
+                <span>
+                  <input value={task.task} onChange={(e)=>{setTasks(tasks.map(t=>t.task===task.task?{...task,task:e.target.value}:t))}}></input>
+                </span>
                 <button onClick={() => {
                   setTasks(tasks.map(t => t.taskId === task.taskId ? { ...t, status: 'completed' } : t));
                 }} className="incomplete-button">
