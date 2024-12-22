@@ -1,4 +1,4 @@
-
+import {Outlet} from 'react-router-dom';
 
 function AppLayout(){
 return(
@@ -14,6 +14,7 @@ return(
     <div>
         <Footer></Footer>
     </div>
+    <Outlet></Outlet>
     </>
 )
 }

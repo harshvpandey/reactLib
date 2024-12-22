@@ -33,7 +33,7 @@ return(
                 </span>
              
                 <button onClick={()=>{setTasks(tasks.map(t=>t.task===task.task?{...task,edit:false}:t))}}>Edit</button>
-
+                <button onClick={()=>{setTasks(tasks.map(t=>t.task===task.task?{...task,edit:true}:t))}}>Save</button>
                 <button onClick={() => {
                   setTasks(tasks.map(t => t.taskId === task.taskId ? { ...t, status: 'completed' } : t));
                 }} className="incomplete-button">
